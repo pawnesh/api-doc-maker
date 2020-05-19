@@ -1,0 +1,7 @@
+<label for="jsonfile">
+    <div class="upload">
+        <h4>{{uploadText}}</h4>
+    </div>
+</label>
+<input type="file" (change)="readFile($event.target.files)" class="hidden" id="jsonfile" />
+<div class="error">{{message}}</div>

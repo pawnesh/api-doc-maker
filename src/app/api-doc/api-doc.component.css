@@ -1,0 +1,39 @@
+.collapsible-header .row {
+    margin-left: unset;
+    margin-bottom: unset;
+}
+
+
+.box {
+    background: #f8f8f8;
+    color: #282828;
+    margin-bottom: 15px;
+    word-break: break-all;
+    border: 1px solid #e6e6e6;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.code {
+    background-color: rgba(51, 51, 51, 0.05);
+    color: #d9d9d9 !important;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.section-api{
+    margin-top: 52px;
+    display: block;
+}
+.collapsible{
+    margin-top:15px;
+}
+table{
+    table-layout: fixed;
+}
+table td{
+    word-wrap: break-word;
+}

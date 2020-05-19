@@ -1,13 +1,27 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>ApiDocMaker</title>
   <base href="/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
   <app-root></app-root>
+  <script>
+    function done(){
+      var elem = document.querySelector('.collapsible.expandable');
+                var instance = M.Collapsible.init(elem, {
+                        accordion: false
+                });
+
+    }
+  </script>
 </body>
+
 </html>

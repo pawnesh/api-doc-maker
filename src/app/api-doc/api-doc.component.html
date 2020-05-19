@@ -1,0 +1,49 @@
+<dev class="section-api" *ngFor="let collection of apis">
+    <h5>{{collection.name}}</h5>
+    <div class="divider"></div>
+    <ul class="collapsible expandable">
+        <li class="active" *ngFor="let api of collection.apis">
+            <div class="collapsible-header">
+                <div class="row">
+                    <div class="col l3">
+                        <span class='green-text method right' *ngIf="api.method=='GET'">{{api.method}}</span>
+                        <span class='orange-text method right' *ngIf="api.method=='POST'">{{api.method}}</span>
+                    </div>
+                    <div class="col l9">
+                        {{api.name}}
+                    </div>
+                </div>
+
+            </div>
+            <div class="collapsible-body" style="display:block;">
+                <div class="box">
+                    {{api.url}}
+                </div>
+                <span>
+                    {{api.description}}
+                </span>
+                <section>
+                    <div class="section">
+                        <h6>HEADERS</h6>
+                    </div>
+                    <div class="divider"></div>
+                    <table class="striped">
+                        <tr *ngFor="let header of api.header">
+                            <th>{{header.key}}</th>
+                            <td>{{header.value}}</td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <div class="section">
+                        <h6>BODY</h6>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="code">
+                        <pre class="orange-text"><code>{{api.body}}</code></pre>
+                    </div>
+                </section>
+            </div>
+        </li>
+    </ul>
+</dev>
