@@ -1,27 +1,23 @@
 # ApiDocMaker
+REST API Documentation Generator Tool | Support PostMan Collection
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+# The reason of existence
+Everything comes with necessties. Most of the time we face a situation where we just wanted to present a user friendly documentation for the user. Like upload the json collection and get the nice documentation.
 
-## Development server
+Cases like, 
+- you have to share the collection to the customer
+- hosting a file to your own server for the API consumer
+- or sharing it with the other team
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In such cases we just want a basic document generator where we do not have to invest more time to understand that tool. A tool where we add our collection and it give us our document.
 
-## Code scaffolding
+ApiDocMaker, take a collection and generate the downloadable REST API document for you.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Currently it support Postman API collections.
 
-## Build
+# Ready to use URL
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Contributing
+Contributions are welcome. 
