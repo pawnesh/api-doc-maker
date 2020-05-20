@@ -23,4 +23,12 @@ export class ApiDocComponent implements OnInit {
     api.active = api.active?false:true;
   }
 
+  openAll(): void{
+    for(let i=0;i< this.apis.length;i++){
+      for(let j=0;j<this.apis[i].apis.length;j++){
+        this.apis[i].apis[j].active = true;
+      }
+    }
+  }
+
 }

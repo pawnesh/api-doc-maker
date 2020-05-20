@@ -56,7 +56,7 @@ export class ApiCollectionService {
       let api: Api = {
         'name': item.name,
         'method': item.request.method,
-        'description': '',
+        'description': item.request.description?item.request.description:'',
         'url': item.request.url.raw,
         'header': item.request.header,
         'body': this.getBody(item.request),
@@ -84,11 +84,10 @@ export class ApiCollectionService {
     if(!request.body){
       return '';
     }
-    let type = request.body.options;
-    if (type.raw && type.raw.language && type.raw.language == 'json') {
-      return 'json';
+    if(request.body.formdata){
+      return 'form-data';
     }
-    return 'form-data';
+    return 'json';
   }
 
   getApi():Array<ApiCollection>{

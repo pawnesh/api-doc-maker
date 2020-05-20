@@ -1,3 +1,7 @@
+<div class="section-api" *ngIf="apis.length > 0">
+    <button type="button" (click)="openAll()" class="waves-effect waves-light btn">Open
+        All</button>
+</div>
 <div class="section-api" *ngFor="let collection of apis">
     <h5>{{collection.name}}</h5>
     <div class="divider"></div>
