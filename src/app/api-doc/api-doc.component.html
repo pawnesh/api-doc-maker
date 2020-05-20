@@ -1,15 +1,15 @@
-<dev class="section-api" *ngFor="let collection of apis">
+<div class="section-api" *ngFor="let collection of apis">
     <h5>{{collection.name}}</h5>
     <div class="divider"></div>
     <ul class="collapsible expandable">
         <li [ngClass]="{'active': api.active == true}" *ngFor="let api of collection.apis" (click)="toggle(api)">
             <div class="collapsible-header">
                 <div class="row">
-                    <div class="col l3">
+                    <div class="col s1">
                         <span class='green-text method right' *ngIf="api.method=='GET'">{{api.method}}</span>
                         <span class='orange-text method right' *ngIf="api.method=='POST'">{{api.method}}</span>
                     </div>
-                    <div class="col l9">
+                    <div class="col s11">
                         {{api.name}}
                     </div>
                 </div>
@@ -39,14 +39,26 @@
                         <h6>BODY</h6>
                     </div>
                     <div class="divider"></div>
-                    <div class="code">
+                    <div class="code" *ngIf="api.bodyType != 'form-data'">
                         <pre class="green-text"><code>{{api.body}}</code></pre>
                     </div>
+                    <table class="striped" *ngIf="api.bodyType == 'form-data'">
+                        <tr>
+                            <th>Key</th>
+                            <th>Value</th>
+                            <th>Type</th>
+                        </tr>
+                        <tr *ngFor="let set of api.body">
+                            <th>{{set.key}}</th>
+                            <td>{{set.value}}</td>
+                            <td>{{set.type}}</td>
+                        </tr>
+                    </table>
                 </section>
             </div>
         </li>
     </ul>
-</dev>
+</div>
 <div *ngIf="apis.length == 0" class="section-api" style="text-align:center;">
     Nothing to generate, go <a routerLink="/">back</a>
 </div>

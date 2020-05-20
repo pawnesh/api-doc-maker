@@ -60,7 +60,8 @@ export class ApiCollectionService {
         'url': item.request.url.raw,
         'header': item.request.header,
         'body': this.getBody(item.request),
-        'bodyType': this.getBodyType(item.request)
+        'bodyType': this.getBodyType(item.request),
+        'active': false
       };
       collection.apis.push(api);
     }
@@ -74,9 +75,10 @@ export class ApiCollectionService {
     if(request.body.raw){
       return request.body.raw;
     }
-    if(request.body.form_data){
-      return request.body.form_data;
+    if(request.body.formdata){
+      return request.body.formdata;
     }
+    return '';
   }
   getBodyType(request) {
     if(!request.body){

@@ -1,3 +1,7 @@
+.collapsible-header{
+    display: block;
+}
+
 .collapsible-header .row {
     margin-left: unset;
     margin-bottom: unset;
