@@ -17,10 +17,10 @@ export class ApiDocComponent implements OnInit {
 
   ngOnInit(): void {
     this.apis = this.service.getApi();
-    console.log(this.apis);
   }
 
-  ngAfterViewInit(): void {
-    done();
+  toggle(api): void{
+    api.active = api.active?false:true;
   }
+
 }

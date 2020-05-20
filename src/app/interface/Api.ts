@@ -6,4 +6,5 @@ export interface Api{
     header:Array<string>;
     body:string;
     bodyType:string;
+    active:boolean;
 }

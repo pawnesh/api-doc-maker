@@ -2,7 +2,7 @@
     <h5>{{collection.name}}</h5>
     <div class="divider"></div>
     <ul class="collapsible expandable">
-        <li class="active" *ngFor="let api of collection.apis">
+        <li [ngClass]="{'active': api.active == true}" *ngFor="let api of collection.apis" (click)="toggle(api)">
             <div class="collapsible-header">
                 <div class="row">
                     <div class="col l3">
@@ -15,7 +15,7 @@
                 </div>
 
             </div>
-            <div class="collapsible-body" style="display:block;">
+            <div class="collapsible-body" *ngIf="api.active == true" style="display:block;">
                 <div class="box">
                     {{api.url}}
                 </div>
@@ -34,16 +34,19 @@
                         </tr>
                     </table>
                 </section>
-                <section>
+                <section *ngIf="api.body.length > 0">
                     <div class="section">
                         <h6>BODY</h6>
                     </div>
                     <div class="divider"></div>
                     <div class="code">
-                        <pre class="orange-text"><code>{{api.body}}</code></pre>
+                        <pre class="green-text"><code>{{api.body}}</code></pre>
                     </div>
                 </section>
             </div>
         </li>
     </ul>
 </dev>
+<div *ngIf="apis.length == 0" class="section-api" style="text-align:center;">
+    Nothing to generate, go <a routerLink="/">back</a>
+</div>

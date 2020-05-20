@@ -8,6 +8,7 @@ import { Api } from './interface/Api';
 export class ApiCollectionService {
 
   public apis: Array<ApiCollection> = [];
+  public collectionName:string = '-_-';
 
   constructor() {
 
