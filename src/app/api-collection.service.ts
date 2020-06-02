@@ -56,7 +56,7 @@ export class ApiCollectionService {
       let api: Api = {
         'name': item.name,
         'method': item.request.method,
-        'description': item.request.description?item.request.description:'',
+        'description': this.getDescripton(item.request),
         'url': item.request.url.raw,
         'header': item.request.header,
         'body': this.getBody(item.request),
@@ -88,6 +88,18 @@ export class ApiCollectionService {
       return 'form-data';
     }
     return 'json';
+  }
+
+  getDescripton(request){
+    var description = request.description?request.description:'';
+    if(description == ''){
+      return description;
+    }
+    if(description.indexOf('-') > -1){
+      description = description.split('-');
+      description = '<ul><li>'+description.join('</li><li>')+'</li><ul>';
+    }
+    return description;
   }
 
   getApi():Array<ApiCollection>{
